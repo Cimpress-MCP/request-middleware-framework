@@ -12,6 +12,7 @@
   "dependencies": {
     "express": "^4.14.0",
     "lodash": "^4.15.0",
+    "request": "^2.74.0",
     "request-interceptor": "file:.."
   },
   "devDependencies": {

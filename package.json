@@ -1,6 +1,6 @@
 {
   "name": "request-interceptor",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A framework to intercept HTTP calls made via the request HTTP client.",
   "main": "src/index.js",
   "scripts": {

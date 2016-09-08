@@ -1,4 +1,4 @@
-var _    = require("lodash");
+var _ = require("lodash");
 
 module.exports = function(num) {
   return function(options, callback, next) {
