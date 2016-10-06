@@ -1,40 +1,42 @@
 var _      = require("lodash"),
     assert = require("assert-plus");
 
-var RequestInterceptor = function(request, interceptors) {
-  if (!(this instanceof RequestInterceptor)) {
-    return new RequestInterceptor(request, interceptors);
+var RequestMiddlewareFramework = function(request) {
+  if (!(this instanceof RequestMiddlewareFramework)) {
+    return new RequestMiddlewareFramework(request);
   }
 
   assert.func(request, "request");
   this.request = request;
 
-  this.initialInterceptor = function(options, callback) {
+  this.initialMiddleware = function(options, callback) {
     request(options.uri, options, callback);
   };
 
-  this.interceptors = [ ];
+  this.middleware = [ ];
 
-  if (interceptors) {
-    this.use(interceptors);
+  if (arguments.length > 1) {
+    var args = _.toArray(arguments);
+    args.shift();
+    _.forEach(args, mw => this.use(mw));
   }
 };
 
-RequestInterceptor.prototype.use = function(interceptors) {
-  this.interceptors = _.concat(this.interceptors, interceptors);
+RequestMiddlewareFramework.prototype.use = function(middleware) {
+  this.middleware = _.concat(this.middleware, middleware);
 };
 
-RequestInterceptor.prototype.getInterceptedRequest = function() {
+RequestMiddlewareFramework.prototype.getMiddlewareEnabledRequest = function() {
   var me = this;
   var intercept = function(options, callback) {
-    var interceptors = _.concat(me.interceptors, me.initialInterceptor);
+    var middleware = _.concat(me.middleware, me.initialMiddleware);
     var next = function(_options, _callback) {
-      var nextInterceptor = interceptors.shift();
-      nextInterceptor(_options, _callback, next);
+      var nextMiddleware = middleware.shift();
+      nextMiddleware(_options, _callback, next);
     };
     next(options, callback);
   };
   return me.request.defaults(intercept);
 };
 
-module.exports = RequestInterceptor;
+module.exports = RequestMiddlewareFramework;

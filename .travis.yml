@@ -1,15 +1,16 @@
 language: node_js
 node_js:
-- "6"
-- "5"
+- '6'
+- '5'
 script:
 - grunt
 deploy:
   provider: npm
-  email: anf4@cornell.edu
+  email: mcp_infrastructure@cimpress.com
   api_key:
-    secure: "lUv5YgSSvuW8OfTHkvkRaq6wyyobzy1ewQ2XsBIINxYUnqBL3iN+UNvuqJ2dZibwuaXbBB0HXT5/w1HQAykvTjeXi9VwrFJk6v1IoS1tUIm48Ln4OBY67UkYIiZFEAl3Sh73yxUxbQmSjJP9vtV877t5eeb0cn4cTaRhUVBHpLU6XXeR8Sl343C6Xwy+EJ+ZP4SRcJ/pu/Ze1uvC5ys9BN1o1L8anFeNDJL58BMmExy3WcAKUyKPl7jSzMfhTeGT1AjH2BVuOyPsansqLqxxKVtSOGvxaQkH/ubhwKdQOVMUZ/hFYFy+O8aIvwTNUpHvhQRBw6KIUH7QBLONVDUcdBn6xQWebdq6551ujEMyB9WTxs5MaOzHEbEx4prnSuNBg3MD+0Zzh8qugn5rtjG/T0YvhrsMp6o5rYpcmceCBY6PiLGnCxTetqgzfIjNt+RtU7dwDFWBHIn7sRZa/CyQ4zD0Ohq2c0KHevp2Pbr85cS7J9EBsC+qbbsYXWwzgqSNVa60cCYAiGcQuRzBkJDOu4wi8/til6hLhhXkENj0ei4lgJBqnRwsHF6R3vl9UyNtEY243xAwfEmpVT99dw1khzxLWpkGvJq7+zrFUJYo8XpSnRmNz9HLgip70NN9DU1CB500Ym7qtmARaTDRJQXkgBTqKm7KdGOAXSZ0Djv69Mg="
+    secure: 'fIaNCI615/U9ZkEubXN9VIo6PTZ5hRtyxYVlt5AnIBrVlOFUjaXpvVpic7TtNIKMtcPN6tHCB6AO+ameMZZmQ/gTzehYq6Y/xi8MY3PgJp/Hf87RmW8FuWXC8Zqjakfu6CsmSax8X4IydWf30sls69LGy/BKe6TSYXy7SMnnQlvBBBvX8HBw0NuVzqmJmRTbq+o3IZGEASiguGvHqBL/RA0C0E3+d24AefojVztMvd1SgEEtZ8s2x57SPfagtjiMIYfVZ/bNy5LqJyjNMBE5vsMSBset3Ohtw3ASQKmzSej31PyVNHGiN9AhSDNkiUtJGVXeSCWqLSjXtdnWGly/77hGtpBmOp0CGnkPzWhTnGTAfEirjteQnUOeMwTTTu+nIzdgnO6hucfG/ez4nWhD89VMQLW7wkR+hJtSHSLV7vsRqHUT+cgSyR7aL1QPMaJGg1LOpyRaOywSb0X+QbYS4hFPMgepGg2SO1G9bYan5ESFnJN0FBiUAReK67wficOAkemCzYFhqVZannk7zfOzwgCOlmR6Yb/6Vjvs+5YOk5ODQCtt4Q7ypUZekWulU26nhYGNqgjoCikHbGab2SU4RWRAFCj/ECZooiafOgDsCunzZBDPK0PslBWVDTpgX1On3aqr9rHRGAjjhLocKPwcc1TDpNe62c1P5LU7uMnE0Fw='
   on:
     tags: true
     branch: master
-    node: "5"
+    node: '5'
+    repo: Cimpress-MCP/request-middleware-framework
