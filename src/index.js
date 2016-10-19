@@ -10,7 +10,7 @@ var RequestMiddlewareFramework = function(request) {
   this.request = request;
 
   this.initialMiddleware = function(options, callback) {
-    request(options.uri, options, callback);
+    request(options, callback);
   };
 
   this.middleware = [ ];
